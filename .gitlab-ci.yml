@@ -15,8 +15,12 @@ test:
     stage: test
     script: 
         - echo "Testing"
+        - mkdir test
         - test -f "build/info.txt"
     when: manual
+    artifacts:
+        paths:
+            - test
 deploy:
     stage: deploy
     script:

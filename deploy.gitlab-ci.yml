@@ -16,7 +16,6 @@ test:
     script: 
         - echo "Testing"
         - test -f "build/info.txt"
-        
 deploy:
     stage: deploy
     script:

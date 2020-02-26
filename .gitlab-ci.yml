@@ -1,6 +1,7 @@
 stages:
     - build
     - test
+    - deploy
 build:
     stage: build
     script: 
@@ -15,3 +16,7 @@ test:
     script: 
         - echo "Testing"
         - test -f "build/info.txt"
+deploy:
+    stage: deploy
+    script:
+        - echo "Deployment is succesful"

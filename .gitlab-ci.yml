@@ -16,6 +16,7 @@ test:
     script: 
         - echo "Testing"
         - test -f "build/info.txt"
+    when: manual
 deploy:
     stage: deploy
     script:

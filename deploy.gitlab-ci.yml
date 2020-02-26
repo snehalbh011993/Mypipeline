@@ -1,0 +1,27 @@
+stages:
+    - build
+    - test
+    - deploy
+build:
+    stage: build
+    script: 
+        - echo "Building"
+        - mkdir build
+        - echo "hello" > build/info.txt
+    artifacts: 
+        paths:
+            - build/
+test:
+    stage: test
+    script: 
+        - echo "Testing"
+        - test -f "build/info.txt"
+    artifacts: 
+        paths:
+            - build/test/
+        
+deploy:
+    stage: deploy
+    script:
+        - deploy -f "build/info.txt"
+        - echo "deployment is successful"
